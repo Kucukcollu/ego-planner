@@ -17,6 +17,7 @@ find_package(catkin REQUIRED COMPONENTS
   plan_env
   cv_bridge
   path_searching
+  nlopt
 )
 
 catkin_package(
@@ -32,6 +33,7 @@ include_directories(
     ${catkin_INCLUDE_DIRS}
     ${Eigen3_INCLUDE_DIRS} 
     ${PCL_INCLUDE_DIRS}
+    ${nlopt_INCLUDE_DIRS}
 )
 
 add_library( bspline_opt 
@@ -40,5 +42,6 @@ add_library( bspline_opt
     src/gradient_descent_optimizer.cpp
     )
 target_link_libraries( bspline_opt
-    ${catkin_LIBRARIES} 
+    ${catkin_LIBRARIES}
+    ${nlopt_LIBRARIES} 
     )  

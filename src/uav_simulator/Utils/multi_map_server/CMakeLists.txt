@@ -167,11 +167,12 @@ add_executable(multi_map_visualization src/multi_map_visualization.cc)
 add_dependencies(multi_map_visualization multi_map_server_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(multi_map_visualization 
+target_link_libraries(multi_map_visualization
    ${catkin_LIBRARIES}
    ${ARMADILLO_LIBRARIES}
-   pose_utils
+   ${pose_utils_LIBRARIES}
 )
+
 
 #############
 ## Install ##

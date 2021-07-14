@@ -52,6 +52,8 @@ find_package(catkin REQUIRED COMPONENTS
   pose_utils
 )
 
+
+
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 
@@ -162,7 +164,7 @@ add_executable(odom_visualization src/odom_visualization.cpp)
 target_link_libraries(odom_visualization
    ${catkin_LIBRARIES}
    ${ARMADILLO_LIBRARIES}
-   pose_utils
+   ${pose_utils_LIBRARIES}
 )
 
 #############
